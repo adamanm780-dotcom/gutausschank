@@ -902,14 +902,14 @@
           <div class="visit-card reveal">
             <div class="visit-card-icon">🕐</div>
             <h3>Öffnungszeiten</h3>
-            <div class="placeholder-box placeholder-box--light">
-              <span class="placeholder-icon">📋</span>
-              <div>
-                <strong>Öffnungszeiten bitte einfügen</strong>
-                <span>z.B. Mo–Fr: 17–23 Uhr, Sa–So: 12–23 Uhr</span>
-              </div>
-            </div>
-            <p class="visit-hint">Für aktuelle Öffnungszeiten erreichen Sie uns telefonisch oder per E-Mail.</p>
+            <table class="hours-table">
+              <tr><td>Montag</td><td>Geschlossen</td></tr>
+              <tr><td>Di – Do</td><td>17:00 – 22:00 Uhr</td></tr>
+              <tr><td>Freitag</td><td>12:00 – 14:00 &amp; 17:00 – 22:00 Uhr</td></tr>
+              <tr><td>Samstag</td><td>17:00 – 22:00 Uhr</td></tr>
+              <tr><td>So &amp; Feiertage</td><td>12:00 – 14:00 &amp; 17:00 – 22:00 Uhr</td></tr>
+            </table>
+            <p class="visit-hint">Abendreservierungen werden empfohlen.</p>
           </div>
 
           <!-- Reservierung -->
@@ -917,13 +917,8 @@
             <div class="visit-card-icon">🍷</div>
             <h3>Reservierung</h3>
             <p>Für besondere Anlässe, Gruppen oder damit Sie sicher einen Platz haben — rufen Sie uns an oder schreiben Sie uns.</p>
-            <div class="placeholder-box placeholder-box--light">
-              <span class="placeholder-icon">📞</span>
-              <div>
-                <strong>Telefonnummer bitte einfügen</strong>
-                <span>z.B. +49 6123 xxxxxx</span>
-              </div>
-            </div>
+            <p><a href="tel:+4961239349690" class="kontakt-phone-link">+49 6123 9349690</a></p>
+            <p class="visit-hint">Oder bequem online über <a href="https://www.restaurant-reservierung.de" target="_blank" rel="noopener">Restaurant-Reservierung.de</a> buchen.</p>
             <a href="#kontakt" class="btn btn-wine btn-sm">Nachricht senden</a>
           </div>
 
@@ -979,7 +974,7 @@
                     PLATZHALTER: Ersetzen Sie den folgenden span durch:
                     <a href="tel:+49XXXXXXXXX">+49 XXXX XXXXXX</a>
                   -->
-                  <span class="placeholder-text">Telefonnummer folgt</span>
+                  <a href="tel:+4961239349690">+49 6123 9349690</a>
                 </div>
               </li>
               <li class="kontakt-item">

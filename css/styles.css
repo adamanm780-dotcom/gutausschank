@@ -1088,6 +1088,14 @@ p + p { margin-top: 1em; }
 .visit-card h3   { margin-bottom: 1rem; }
 .visit-card p    { margin-bottom: 0.75rem; }
 
+.hours-table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; font-size: 0.92rem; }
+.hours-table td { padding: 0.35rem 0; }
+.hours-table td:first-child { color: var(--c-text-muted); width: 44%; }
+.hours-table td:last-child { font-weight: 500; }
+.hours-table tr:first-child td { color: var(--c-wine); font-weight: 600; }
+.kontakt-phone-link { font-size: 1.1rem; font-weight: 600; color: var(--c-wine); text-decoration: none; }
+.kontakt-phone-link:hover { text-decoration: underline; }
+
 .visit-hint {
   font-size: 0.82rem;
   color: var(--c-text-muted);
