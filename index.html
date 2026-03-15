@@ -811,36 +811,31 @@
         </div>
       </div>
 
-      <!--
-        FOTO-HINWEIS: Ersetzen Sie jeden <div class="photo-ph">...</div> Block
-        durch ein <img src="IHR-FOTO.jpg" alt="Beschreibung" /> Element.
-        Empfehlung: Außenbereich, Innenbereich, Weinflaschen/-gläser,
-        Gerichte, Weinberge, Gäste (mit Erlaubnis), Atmosphäre.
-      -->
-      <div class="gallery-mosaic gallery-mosaic--4">
+      <div class="slideshow reveal" id="gallery-slideshow" aria-label="Bildergalerie">
 
-        <div class="gm-item gm-item--gold reveal" data-reveal-delay="0">
-          <img src="images/super-1.png" alt="Bakarteller — Spezialität des Hauses" loading="lazy" />
+        <button class="slideshow-btn slideshow-btn--prev" aria-label="Vorheriges Bild">&#8249;</button>
+        <button class="slideshow-btn slideshow-btn--next" aria-label="Nächstes Bild">&#8250;</button>
+
+        <div class="slideshow-track">
+          <div class="slideshow-slide active">
+            <img src="images/supi-1.png" alt="Schweinshaxe mit Kartoffelpüree und Sauerkraut" />
+          </div>
+          <div class="slideshow-slide">
+            <img src="images/supi-2.png" alt="Gulasch mit Klößen" />
+          </div>
+          <div class="slideshow-slide">
+            <img src="images/supi-3.png" alt="Gegrilltes Fleisch mit Beilagen" />
+          </div>
+          <div class="slideshow-slide">
+            <img src="images/supi-5.png" alt="Bakarteller Spezialität" />
+          </div>
         </div>
 
-        <div class="gm-item gm-item--gold reveal" data-reveal-delay="120">
-          <img src="images/super-2.png" alt="Gemütliche Abendstimmung auf der Terrasse" loading="lazy" />
-        </div>
-
-        <div class="gm-item gm-item--gold reveal" data-reveal-delay="240">
-          <img src="images/super-3.png" alt="Gesellige Gäste im Gutausschank" loading="lazy" />
-        </div>
-
-        <div class="gm-item gm-item--gold reveal" data-reveal-delay="360">
-          <img src="images/super-4.png" alt="Frisch zubereitetes Gericht aus der Küche" loading="lazy" />
-        </div>
-
-        <div class="gm-item gm-item--gold reveal" data-reveal-delay="480">
-          <img src="images/super-5.png" alt="Hirschgulasch mit Klößen" loading="lazy" />
-        </div>
-
-        <div class="gm-item gm-item--gold reveal" data-reveal-delay="600">
-          <img src="images/super-6.png" alt="Schweinshaxe mit Sauerkraut" loading="lazy" />
+        <div class="slideshow-dots" role="tablist" aria-label="Bild auswählen">
+          <button class="slideshow-dot active" role="tab" aria-selected="true"  aria-label="Bild 1"></button>
+          <button class="slideshow-dot"        role="tab" aria-selected="false" aria-label="Bild 2"></button>
+          <button class="slideshow-dot"        role="tab" aria-selected="false" aria-label="Bild 3"></button>
+          <button class="slideshow-dot"        role="tab" aria-selected="false" aria-label="Bild 4"></button>
         </div>
 
       </div>

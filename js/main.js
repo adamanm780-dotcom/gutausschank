@@ -163,6 +163,36 @@
     sections.forEach(s => sectionObserver.observe(s));
   }
 
+  /* ── Slideshow ── */
+  const slideshow = document.getElementById('gallery-slideshow');
+  if (slideshow) {
+    const slides = slideshow.querySelectorAll('.slideshow-slide');
+    const dots   = slideshow.querySelectorAll('.slideshow-dot');
+    let current  = 0;
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      dots[current].setAttribute('aria-selected', 'false');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      dots[current].setAttribute('aria-selected', 'true');
+    }
+
+    slideshow.querySelector('.slideshow-btn--prev').addEventListener('click', () => goTo(current - 1));
+    slideshow.querySelector('.slideshow-btn--next').addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+    /* Swipe auf Touch-Geräten */
+    let touchStartX = 0;
+    slideshow.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    slideshow.addEventListener('touchend',   e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+    });
+  }
+
   /* ── Menü-Tabs (Speisekarte / Getränke / Wochenkarte) ── */
   const menuTabBtns   = document.querySelectorAll('.menu-tab-btn');
   const menuTabPanels = document.querySelectorAll('.menu-tab-panel');
