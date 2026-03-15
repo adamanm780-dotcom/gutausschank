@@ -556,7 +556,7 @@ p + p { margin-top: 1em; }
 .atmo-img-wrap img { transition: transform 0.8s var(--ease); }
 .atmo-img-wrap:hover img { transform: scale(1.04); }
 .atmo-img-wrap--photo { border: 2.5px solid var(--c-wine); }
-.atmo-img-wrap--photo img { object-fit: contain; transform: scale(0.82); }
+.atmo-img-wrap--photo img { object-fit: cover; }
 
 .atmo-quote-card {
   position: absolute;
@@ -1012,8 +1012,9 @@ p + p { margin-top: 1em; }
   aspect-ratio: 3/4;
   box-shadow: 0 24px 60px rgba(25, 12, 3, 0.16);
 }
-.about-img-main img { transition: transform 0.8s ease; }
+.about-img-main img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
 .about-img-main:hover img { transform: scale(1.04); }
+.about-img-accent img { width: 100%; height: 100%; object-fit: cover; }
 
 .about-img-accent {
   position: absolute;
