@@ -163,28 +163,43 @@
     sections.forEach(s => sectionObserver.observe(s));
   }
 
-  /* ── Slideshow ── */
+  /* ── Slideshow (Carousel mit sichtbaren Nachbarbildern) ── */
   const slideshow = document.getElementById('gallery-slideshow');
   if (slideshow) {
-    const slides = slideshow.querySelectorAll('.slideshow-slide');
-    const dots   = slideshow.querySelectorAll('.slideshow-dot');
-    let current  = 0;
+    const window_  = slideshow.querySelector('.slideshow-window');
+    const track    = slideshow.querySelector('.slideshow-track');
+    const slides   = slideshow.querySelectorAll('.slideshow-slide');
+    const dots     = slideshow.querySelectorAll('.slideshow-dot');
+    const GAP      = 18; // px – muss mit CSS gap übereinstimmen
+    let current    = 0;
+
+    function updateTrack() {
+      const winW     = window_.offsetWidth;
+      const slideW   = winW * 0.78;
+      const startOff = (winW - slideW) / 2;          // Erstes Bild zentrieren
+      const offset   = startOff - current * (slideW + GAP);
+      track.style.transform = `translateX(${offset}px)`;
+
+      slides.forEach((s, i) => s.classList.toggle('active', i === current));
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+        d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+      });
+    }
 
     function goTo(index) {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-      dots[current].setAttribute('aria-selected', 'false');
       current = (index + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
-      dots[current].setAttribute('aria-selected', 'true');
+      updateTrack();
     }
 
     slideshow.querySelector('.slideshow-btn--prev').addEventListener('click', () => goTo(current - 1));
     slideshow.querySelector('.slideshow-btn--next').addEventListener('click', () => goTo(current + 1));
     dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
 
-    /* Swipe auf Touch-Geräten */
+    window.addEventListener('resize', updateTrack);
+    updateTrack(); // Initiales Setzen
+
+    /* Swipe */
     let touchStartX = 0;
     slideshow.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
     slideshow.addEventListener('touchend',   e => {
