@@ -556,6 +556,7 @@ p + p { margin-top: 1em; }
 .atmo-img-wrap img { transition: transform 0.8s var(--ease); }
 .atmo-img-wrap:hover img { transform: scale(1.04); }
 .atmo-img-wrap--photo { border: 2.5px solid var(--c-wine); }
+.atmo-img-wrap--photo img { object-fit: contain; transform: scale(0.82); }
 
 .atmo-quote-card {
   position: absolute;
