@@ -191,75 +191,611 @@
           <p class="section-desc">Was auf den Tisch kommt, kommt von hier. Regionale Produkte, ehrliche Zubereitung, authentischer Geschmack.</p>
         </div>
 
-        <div class="menu-cards">
+        <!-- ══ Menü-Tabs ══ -->
+        <div class="menu-tabs reveal">
 
-          <!-- Weine -->
-          <article class="menu-card reveal">
-            <div class="menu-card-img">
-              <!-- FOTO-HINWEIS: Rheingauer Weinflaschen oder frisch eingeschenkte Weingläser -->
-              <div class="photo-ph">
-                <div class="photo-ph-inner">
-                  <svg class="photo-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                  <span class="photo-ph-label">Originalfoto folgt</span>
-                  <span class="photo-ph-hint">Weine & Getränke</span>
+          <!-- Tab-Navigation -->
+          <nav class="menu-tabs-nav" role="tablist" aria-label="Kartenauswahl">
+            <button class="menu-tab-btn active" role="tab" aria-selected="true"
+                    data-tab="speisekarte" aria-controls="tab-speisekarte" id="tabBtn-speisekarte">
+              <span class="menu-tab-icon" aria-hidden="true">🍽️</span>Speisekarte
+            </button>
+            <button class="menu-tab-btn" role="tab" aria-selected="false"
+                    data-tab="getraenke" aria-controls="tab-getraenke" id="tabBtn-getraenke">
+              <span class="menu-tab-icon" aria-hidden="true">🍷</span>Getränke &amp; Weine
+            </button>
+            <button class="menu-tab-btn" role="tab" aria-selected="false"
+                    data-tab="wochenkarte" aria-controls="tab-wochenkarte" id="tabBtn-wochenkarte">
+              <span class="menu-tab-icon" aria-hidden="true">🗓️</span>Wochenkarte
+            </button>
+          </nav>
+
+          <!-- ══ SPEISEKARTE ══ -->
+          <div class="menu-tab-panel active" id="tab-speisekarte" role="tabpanel" aria-labelledby="tabBtn-speisekarte">
+
+            <!-- Kategorie-Navigation -->
+            <div class="menu-cat-nav" role="tablist" aria-label="Kategorien">
+              <button class="menu-cat-btn active" role="tab" aria-selected="true"  data-cat="suppen">Suppen</button>
+              <button class="menu-cat-btn" role="tab" aria-selected="false" data-cat="toast">Toast</button>
+              <button class="menu-cat-btn" role="tab" aria-selected="false" data-cat="kleine-gerichte">Kleine Gerichte</button>
+              <button class="menu-cat-btn" role="tab" aria-selected="false" data-cat="salate">Salate</button>
+              <button class="menu-cat-btn" role="tab" aria-selected="false" data-cat="vom-schwein">Vom Schwein</button>
+              <button class="menu-cat-btn" role="tab" aria-selected="false" data-cat="spezialgerichte">Spezialgerichte</button>
+              <button class="menu-cat-btn" role="tab" aria-selected="false" data-cat="vom-rind">Vom Rind</button>
+              <button class="menu-cat-btn" role="tab" aria-selected="false" data-cat="von-der-pute">Von der Pute</button>
+              <button class="menu-cat-btn" role="tab" aria-selected="false" data-cat="fischgerichte">Fischgerichte</button>
+              <button class="menu-cat-btn" role="tab" aria-selected="false" data-cat="dessert">Dessert</button>
+            </div>
+
+            <div class="menu-cat-content">
+
+              <!-- SUPPEN -->
+              <div class="menu-cat-panel active" id="cat-suppen">
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Leberknödelsuppe</span>
+                      <span class="menu-item-price">6,00 €</span>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Zwiebelsuppe</span>
+                      <span class="menu-item-price">6,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Toast, Zwiebeln und Käse überbacken</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Riesling-Käse-Suppe</span>
+                      <span class="menu-item-price">6,00 €</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- TOAST -->
+              <div class="menu-cat-panel" id="cat-toast" hidden>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Hawaii Toast</span>
+                      <span class="menu-item-price">9,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Schinken, Ananas, Preiselbeeren und Käse überbacken</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Balkan Toast</span>
+                      <span class="menu-item-price">11,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Schweinesteak, Zwiebeln, Pilze, Tomaten und Käse überbacken</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Florida Toast</span>
+                      <span class="menu-item-price">12,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Schweinelende, Spargel, Sauce Hollandaise und Käse überbacken</p>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- KLEINE GERICHTE -->
+              <div class="menu-cat-panel" id="cat-kleine-gerichte" hidden>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Handkäs' mit Musik</span>
+                      <span class="menu-item-price">10,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Brot und Butter</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Camembert</span>
+                      <span class="menu-item-price">10,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Toastscheiben, Butter und Preiselbeeren</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Hausmachers Wurst</span>
+                      <span class="menu-item-price">12,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Brot und Senf</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Winzerjause</span>
+                      <span class="menu-item-price">14,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Brot und Butter — geräucherter Schinken, Käse, Spargel, Hausmachers Wurst</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Sülze mit Remoulade</span>
+                      <span class="menu-item-price">13,00 € / 10,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Bratkartoffeln / mit Brot</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Leberkäse mit Spiegelei und Senf</span>
+                      <span class="menu-item-price">12,00 € / 10,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Bratkartoffeln / mit Brot</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Wurstsalat mit Brot und Butter</span>
+                      <span class="menu-item-price">11,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">Paprika, Zwiebeln, Gurken, Essig und Öl</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Käsewürfel</span>
+                      <span class="menu-item-price">10,00 €</span>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Spundekäs</span>
+                      <span class="menu-item-price">8,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Brezn oder Brot</p>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- SALATE -->
+              <div class="menu-cat-panel" id="cat-salate" hidden>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Stassen Salat</span>
+                      <span class="menu-item-price">13,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">gemischter Salat mit hausgemachtem Dressing, Thunfisch, Ei, Tomaten, Käse, Zwiebeln</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Bauernsalat</span>
+                      <span class="menu-item-price">13,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">gemischter Salat mit hausgemachtem Dressing, Oliven, Ei, Tomaten, Schafskäse, Zwiebeln</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Salat mit Putenbrust</span>
+                      <span class="menu-item-price">14,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">gemischter Salat mit hausgemachtem Dressing</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Großer gemischter Beilagensalat</span>
+                      <span class="menu-item-price">7,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit hausgemachtem Dressing</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Kleiner gemischter Beilagensalat</span>
+                      <span class="menu-item-price">4,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit hausgemachtem Dressing</p>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- VOM SCHWEIN -->
+              <div class="menu-cat-panel" id="cat-vom-schwein" hidden>
+                <div class="menu-notice">
+                  <span class="menu-notice-icon" aria-hidden="true">ℹ</span>
+                  Zu den mit <strong>*</strong> gekennzeichneten Gerichten servieren wir Pommes-Frites. Für Bratkartoffeln berechnen wir einen Aufpreis von 0,50 €.
                 </div>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Schnitzel Wiener Art <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">12,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Zitrone</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Zwiebelschnitzel <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">14,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit gebratenen Zwiebeln</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Jägerschnitzel <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">15,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Pilzen</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Paprikaschnitzel <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">15,50 €</span>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Balkanschnitzel <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">16,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Pilzen, Zwiebeln, Tomaten und Käse überbacken</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Hackbraten <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">11,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit gebratenen Zwiebeln</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Winzersteak <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">15,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit gebratenen Zwiebeln und Meerrettich</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Schweinesteak <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">15,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Champignon Sahne Sauce</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Schweinelende <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">17,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Champignon Sahne Sauce und Spätzle</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Weingulasch <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">14,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Spätzle</p>
+                  </li>
+                </ul>
               </div>
-            </div>
-            <div class="menu-card-body">
-              <span class="menu-tag">Weinausschank</span>
-              <h3>Rheingauer Weine</h3>
-              <p>Erleben Sie die charaktervollen Rieslinge und Spätburgunder aus den umliegenden Weinlagen des Rheingaus — direkt und frisch ausgeschenkt.</p>
-              <div class="placeholder-box">
-                <span class="placeholder-icon">📋</span>
-                <span>Weinkarte folgt — bitte einfügen</span>
-              </div>
-            </div>
-          </article>
 
-          <!-- Speisen -->
-          <article class="menu-card reveal">
-            <div class="menu-card-img">
-              <!-- FOTO-HINWEIS: Rustikales Essen, Brettljause oder regionale Gerichte -->
-              <div class="photo-ph">
-                <div class="photo-ph-inner">
-                  <svg class="photo-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                  <span class="photo-ph-label">Originalfoto folgt</span>
-                  <span class="photo-ph-hint">Speisen & Küche</span>
+              <!-- SPEZIALGERICHTE -->
+              <div class="menu-cat-panel" id="cat-spezialgerichte" hidden>
+                <div class="menu-notice">
+                  <span class="menu-notice-icon" aria-hidden="true">ℹ</span>
+                  Zu den mit <strong>*</strong> gekennzeichneten Gerichten servieren wir Pommes-Frites. Für Bratkartoffeln berechnen wir einen Aufpreis von 0,50 €.
                 </div>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Cordon Bleu <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">16,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">gefüllt mit geräucherten Schinken und Käse, dazu ein kleiner gemischter Salat</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Hessisches Schnitzel <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">16,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">überbacken mit Camembert und Apfelscheiben, dazu Preiselbeeren und ein kleiner gemischter Salat</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Schummer Schnitzel <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">16,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">überbacken mit Lauch, geräucherten Schinken und Sauce Hollandaise, dazu ein kleiner gemischter Salat</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Schinken Schnitzel <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">16,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">überbacken mit Spargel, geräucherten Schinken, Käse und Sauce Hollandaise, dazu ein kleiner gemischter Salat</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Bakarteller <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">19,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Schweinesteak, Lende, Ćevapčići, Pute — dazu Djuvec Reis und Ajvar</p>
+                  </li>
+                </ul>
               </div>
-            </div>
-            <div class="menu-card-body">
-              <span class="menu-tag">Küche</span>
-              <h3>Herzhafte Speisen</h3>
-              <p>Von deftigen Brettljausen über saisonale Kleinigkeiten bis hin zu hausgemachten Köstlichkeiten — ehrlich, gut und mit Liebe zubereitet.</p>
-              <div class="placeholder-box">
-                <span class="placeholder-icon">📋</span>
-                <span>Speisekarte folgt — bitte einfügen</span>
-              </div>
-            </div>
-          </article>
 
-          <!-- Abende -->
-          <article class="menu-card reveal">
-            <div class="menu-card-img">
-              <!-- FOTO-HINWEIS: Weingläser, gesellige Runde oder Abendstimmung -->
-              <div class="photo-ph">
-                <div class="photo-ph-inner">
-                  <svg class="photo-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                  <span class="photo-ph-label">Originalfoto folgt</span>
-                  <span class="photo-ph-hint">Atmosphäre & Geselligkeit</span>
+              <!-- VOM RIND -->
+              <div class="menu-cat-panel" id="cat-vom-rind" hidden>
+                <div class="menu-notice">
+                  <span class="menu-notice-icon" aria-hidden="true">ℹ</span>
+                  Auf Anfrage erhalten Sie einige unserer Speisen auch als Kinder- oder Seniorenportion. Der Preis reduziert sich um 1,00 €.
                 </div>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Rumpsteak <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">26,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit gebratenen Zwiebeln und Meerrettich, dazu ein kleiner gemischter Beilagensalat</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Rumpsteak mit Krautsalat <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">26,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">dazu ein kleiner gemischter Beilagensalat</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Rinderleber <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">11,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit gebratenen Zwiebeln</p>
+                  </li>
+                </ul>
               </div>
-            </div>
-            <div class="menu-card-body">
-              <span class="menu-tag">Geselligkeit</span>
-              <h3>Gesellige Abende</h3>
-              <p>Ob zu zweit oder in großer Runde — der Gutausschank Stassen ist der perfekte Ort für unvergessliche Abende mit gutem Wein und guten Menschen.</p>
-              <a href="#besuch-planen" class="btn-link">Öffnungszeiten ansehen <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
 
-        </div>
+              <!-- VON DER PUTE -->
+              <div class="menu-cat-panel" id="cat-von-der-pute" hidden>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Putenbrust <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">16,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">in Champignon-Sahne-Sauce</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Putenbrust mit Ananas <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">16,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">in Currysauce, mit Ananas und Preiselbeeren</p>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- FISCHGERICHTE -->
+              <div class="menu-cat-panel" id="cat-fischgerichte" hidden>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Fischstäbchen</span>
+                      <span class="menu-item-price">10,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Pommes Frites</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Eingelegter Hering <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">12,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Äpfeln, Zwiebeln, Essiggurken in Sunnensauce, dazu Salzkartoffeln</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Calamari <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">14,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Knoblauch-Sauce und gemischtem Salat</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Seelachs-Filet <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">17,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">in Zitronen-Dill-Sauce, dazu Salzkartoffeln</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Gebackener Fisch <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">17,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Remoulade, dazu Salzkartoffeln</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Lachs <sup class="menu-item-star">*</sup></span>
+                      <span class="menu-item-price">19,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">in Zitronen-Dill-Sauce, dazu Salzkartoffeln</p>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- DESSERT -->
+              <div class="menu-cat-panel" id="cat-dessert" hidden>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Vanilleeis mit heißen Kirschen</span>
+                      <span class="menu-item-price">7,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">3 Kugeln Vanilleeis mit Sahne</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Amaretto Becher</span>
+                      <span class="menu-item-price">7,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">3 Kugeln Vanilleeis mit Amaretto-Mandellikör und Amaretto</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Früchtebecher</span>
+                      <span class="menu-item-price">7,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">3 Kugeln gemischtes Eis mit Früchten der Saison</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Bananensplit</span>
+                      <span class="menu-item-price">7,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">3 Kugeln Vanilleeis mit Sahne und Schokosoße</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Gemischtes Eis</span>
+                      <span class="menu-item-price">7,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">3 Kugeln gemischtes Eis mit Sahne und Eierlikör</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Apfelstrudel</span>
+                      <span class="menu-item-price">5,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">mit Vanille Soße und Sahne</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Eiskaffee</span>
+                      <span class="menu-item-price">5,50 €</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+            </div><!-- .menu-cat-content -->
+          </div><!-- #tab-speisekarte -->
+
+          <!-- ══ GETRÄNKE & WEINE ══ -->
+          <div class="menu-tab-panel" id="tab-getraenke" role="tabpanel" aria-labelledby="tabBtn-getraenke" hidden>
+            <div class="menu-drink-grid">
+
+              <div class="menu-drink-section">
+                <h3 class="menu-drink-heading">Weine</h3>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Apfelsaftschorle <span class="menu-item-sub">(trocken, halbrocken)</span></span>
+                      <span class="menu-item-price">3,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">0,2 l</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Rotwein <span class="menu-item-sub">(trocken, halbtrocken)</span></span>
+                      <span class="menu-item-price">4,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">0,2 l</p>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="menu-drink-section">
+                <h3 class="menu-drink-heading">Sekt</h3>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Winzersekt</span>
+                      <span class="menu-item-price">21,00 € / 5,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">Flasche 0,75 l &nbsp;/&nbsp; Glas 0,1 l</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">MM-Sekt</span>
+                      <span class="menu-item-price">19,00 € / 3,90 €</span>
+                    </div>
+                    <p class="menu-item-desc">Flasche 0,75 l &nbsp;/&nbsp; Glas 0,1 l</p>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="menu-drink-section">
+                <h3 class="menu-drink-heading">Bier &amp; Spirituosen</h3>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Bitburger Pils</span>
+                      <span class="menu-item-price">3,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">0,33 l</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Asbach Cola</span>
+                      <span class="menu-item-price">4,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">0,4 l</p>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="menu-drink-section">
+                <h3 class="menu-drink-heading">Alkoholfreie Getränke</h3>
+                <ul class="menu-items-list">
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Cola · Fanta · Sprite</span>
+                      <span class="menu-item-price">4,50 €</span>
+                    </div>
+                    <p class="menu-item-desc">0,4 l</p>
+                  </li>
+                  <li class="menu-item">
+                    <div class="menu-item-row">
+                      <span class="menu-item-name">Mineralwasser</span>
+                      <span class="menu-item-price">3,00 €</span>
+                    </div>
+                    <p class="menu-item-desc">0,75 l</p>
+                  </li>
+                </ul>
+              </div>
+
+            </div><!-- .menu-drink-grid -->
+            <p class="menu-drink-note">Bitte fragen Sie nach weiteren Getränken — wir beraten Sie gerne.</p>
+          </div><!-- #tab-getraenke -->
+
+          <!-- ══ WOCHENKARTE ══ -->
+          <div class="menu-tab-panel" id="tab-wochenkarte" role="tabpanel" aria-labelledby="tabBtn-wochenkarte" hidden>
+            <div class="menu-week-header">
+              <p class="menu-week-period">Erhältlich vom 28.11. – 30.11. und vom 05.12. – 07.12.</p>
+            </div>
+            <ul class="menu-items-list menu-items-list--week">
+              <li class="menu-item menu-item--featured">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Schweinepfeffer mit Klößen</span>
+                  <span class="menu-item-price">17,50 €</span>
+                </div>
+              </li>
+              <li class="menu-item menu-item--featured">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Schlachtplatte</span>
+                  <span class="menu-item-price">18,50 €</span>
+                </div>
+                <p class="menu-item-desc">Bauchfleisch, Blut- &amp; Leberwurst, dazu Sauerkraut und Kartoffelpüree</p>
+              </li>
+              <li class="menu-item menu-item--featured">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Schweinshaxe mit Sauerkraut</span>
+                  <span class="menu-item-price">20,50 €</span>
+                </div>
+                <p class="menu-item-desc">dazu Kartoffelpüree</p>
+              </li>
+              <li class="menu-item menu-item--featured">
+                <div class="menu-item-row">
+                  <span class="menu-item-name">Hirschgulasch mit Rotkohl</span>
+                  <span class="menu-item-price">21,50 €</span>
+                </div>
+                <p class="menu-item-desc">dazu Klöße</p>
+              </li>
+            </ul>
+            <p class="menu-week-note">Wir freuen uns auf Ihren Besuch! Genießen Sie traditionelle, hausgemachte Spezialitäten in gemütlicher Atmosphäre.</p>
+          </div><!-- #tab-wochenkarte -->
+
+        </div><!-- .menu-tabs -->
       </div>
     </section>
 

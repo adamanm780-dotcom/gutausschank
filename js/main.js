@@ -163,6 +163,41 @@
     sections.forEach(s => sectionObserver.observe(s));
   }
 
+  /* ── Menü-Tabs (Speisekarte / Getränke / Wochenkarte) ── */
+  const menuTabBtns   = document.querySelectorAll('.menu-tab-btn');
+  const menuTabPanels = document.querySelectorAll('.menu-tab-panel');
+
+  menuTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      menuTabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      menuTabPanels.forEach(p => { p.classList.remove('active'); p.hidden = true; });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById(`tab-${target}`);
+      if (panel) { panel.classList.add('active'); panel.hidden = false; }
+    });
+  });
+
+  /* ── Kategorie-Tabs (innerhalb Speisekarte) ── */
+  document.querySelectorAll('.menu-cat-nav').forEach(nav => {
+    const catBtns   = nav.querySelectorAll('.menu-cat-btn');
+    const content   = nav.nextElementSibling;
+    const catPanels = content ? content.querySelectorAll('.menu-cat-panel') : [];
+
+    catBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.cat;
+        catBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        catPanels.forEach(p => { p.classList.remove('active'); p.hidden = true; });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        const panel = document.getElementById(`cat-${target}`);
+        if (panel) { panel.classList.add('active'); panel.hidden = false; }
+      });
+    });
+  });
+
   /* ── Subtle card tilt on mouse move ── */
   document.querySelectorAll('.menu-card, .visit-card').forEach(card => {
     card.addEventListener('mousemove', e => {
