@@ -797,41 +797,103 @@ p + p { margin-top: 1em; }
   color: var(--c-text-muted);
 }
 
-/* ── 4-Bilder-Layout ── */
+/* ── Bilder-Layout (6 Fotos, 2 Spalten) ── */
 .gallery-mosaic--4 {
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 340px;
-  max-width: 1100px;
+  max-width: 1060px;
   margin: 0 auto;
+  gap: 20px;
 }
-.gallery-mosaic--4 .gm-item:nth-child(1),
-.gallery-mosaic--4 .gm-item:nth-child(4) {
+/* Alle Items gleichmäßig – kein Span-Override nötig */
+.gallery-mosaic--4 .gm-item:nth-child(n) {
   grid-column: span 1;
   grid-row: span 1;
 }
 
-/* ── Gold-Schimmer-Rahmen ── */
-@keyframes goldShimmer {
-  0%   { box-shadow: 0 0 0 3px #C4975A, 0 0 12px 4px rgba(196,151,90,0.35); }
-  50%  { box-shadow: 0 0 0 3px #E8C56A, 0 0 28px 8px rgba(232,197,106,0.65); }
-  100% { box-shadow: 0 0 0 3px #C4975A, 0 0 12px 4px rgba(196,151,90,0.35); }
+/* ── Luxuriöser Gold-Rahmen mit dunkelroten Adern ── */
+@keyframes luxuryGlow {
+  0%   {
+    filter: brightness(0.88) saturate(1.1);
+    box-shadow:
+      0 0 0 1px rgba(196,151,90,0.55),
+      0 6px 24px rgba(74,24,36,0.45),
+      0 0 18px rgba(196,151,90,0.25);
+  }
+  50%  {
+    filter: brightness(1.13) saturate(1.35);
+    box-shadow:
+      0 0 0 1px rgba(232,197,106,0.9),
+      0 8px 36px rgba(74,24,36,0.55),
+      0 0 36px rgba(232,197,106,0.45),
+      0 0 72px rgba(196,151,90,0.18);
+  }
+  100% {
+    filter: brightness(0.88) saturate(1.1);
+    box-shadow:
+      0 0 0 1px rgba(196,151,90,0.55),
+      0 6px 24px rgba(74,24,36,0.45),
+      0 0 18px rgba(196,151,90,0.25);
+  }
 }
 
 .gm-item--gold {
-  border: 3px solid var(--c-gold);
+  padding: 7px;
   border-radius: var(--r-lg);
-  animation: goldShimmer 3s ease-in-out infinite;
+  overflow: hidden;
   cursor: default;
+  /* Gold-Basis mit dunkelroten Adern */
+  background:
+    /* Ader 1 – diagonal schmal */
+    repeating-linear-gradient(
+      -52deg,
+      transparent 0px, transparent 11px,
+      rgba(58, 12, 20, 0.72) 11px, rgba(58, 12, 20, 0.72) 13px,
+      rgba(107, 39, 55, 0.4) 13px, rgba(107, 39, 55, 0.4) 15px,
+      transparent 15px, transparent 28px
+    ),
+    /* Ader 2 – gegenläufig */
+    repeating-linear-gradient(
+      32deg,
+      transparent 0px, transparent 19px,
+      rgba(74, 24, 36, 0.5) 19px, rgba(74, 24, 36, 0.5) 21px,
+      transparent 21px, transparent 42px
+    ),
+    /* Ader 3 – feine Linie */
+    repeating-linear-gradient(
+      -18deg,
+      transparent 0px, transparent 30px,
+      rgba(90, 20, 35, 0.35) 30px, rgba(90, 20, 35, 0.35) 31px,
+      transparent 31px, transparent 56px
+    ),
+    /* Gold-Basis-Gradient */
+    linear-gradient(
+      135deg,
+      #6B4A0E 0%,
+      #B8873A 12%,
+      #E8C56A 28%,
+      #C4975A 42%,
+      #F0D080 55%,
+      #C4975A 68%,
+      #E0B85A 80%,
+      #9A6820 92%,
+      #C4975A 100%
+    );
+  animation: luxuryGlow 3.5s ease-in-out infinite;
 }
-.gm-item--gold:nth-child(2) { animation-delay: 0.75s; }
-.gm-item--gold:nth-child(3) { animation-delay: 1.5s; }
-.gm-item--gold:nth-child(4) { animation-delay: 2.25s; }
+
+.gm-item--gold:nth-child(2) { animation-delay: 0.58s; }
+.gm-item--gold:nth-child(3) { animation-delay: 1.16s; }
+.gm-item--gold:nth-child(4) { animation-delay: 1.75s; }
+.gm-item--gold:nth-child(5) { animation-delay: 2.33s; }
+.gm-item--gold:nth-child(6) { animation-delay: 2.92s; }
 
 .gm-item--gold img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: calc(var(--r-lg) - 3px);
+  border-radius: calc(var(--r-lg) - 7px);
   transition: transform 0.65s ease;
 }
 .gm-item--gold:hover img { transform: scale(1.05); }
@@ -1155,7 +1217,7 @@ address {
   }
   .gm-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
   .gm-item:nth-child(4) { grid-column: span 2; }
-  .gallery-mosaic--4 { grid-auto-rows: 240px; }
+  .gallery-mosaic--4 { grid-auto-rows: 220px; gap: 14px; }
 
   .form-row { grid-template-columns: 1fr; gap: 0; }
 
