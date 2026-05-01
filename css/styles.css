@@ -253,27 +253,25 @@ p + p { margin-top: 1em; }
   flex-shrink: 0;
 }
 .nav-logo-emblem {
-  width: 40px;
-  height: 40px;
-  background: var(--c-wine);
-  border-radius: 50%;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--f-serif);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--c-cream);
   flex-shrink: 0;
-  transition: transform 0.32s var(--ease-spring), background 0.28s ease;
+  transition: transform 0.32s var(--ease-spring);
+}
+.nav-logo-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 .nav-logo:hover .nav-logo-emblem {
-  transform: scale(1.1) rotate(-4deg);
+  transform: scale(1.06) rotate(-3deg);
 }
-.nav--transparent .nav-logo-emblem {
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(8px);
-  color: #fff;
+.nav--transparent .nav-logo-emblem img {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
 }
 
 .nav-logo-text {
@@ -1250,6 +1248,13 @@ address {
   padding-bottom: 2.5rem;
   border-bottom: 1px solid rgba(250, 246, 239, 0.1);
   margin-bottom: 1.75rem;
+}
+.footer-logo {
+  width: 96px;
+  height: auto;
+  display: block;
+  margin-bottom: 1.1rem;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.35));
 }
 .footer-name {
   font-family: var(--f-serif);
