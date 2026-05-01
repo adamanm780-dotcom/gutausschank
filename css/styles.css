@@ -459,8 +459,9 @@ p + p { margin-top: 1em; }
   position: relative;
   z-index: 2;
   max-width: 620px;
-  padding: 0 var(--ctr-px);
-  margin-left: clamp(1rem, 6vw, 5.5rem);
+  padding-left: clamp(1.5rem, 2.5vw, 3rem);
+  padding-right: var(--ctr-px);
+  margin-left: 0;
 }
 
 .hero-eyebrow {
